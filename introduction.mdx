@@ -1,0 +1,116 @@
+---
+title: Introduction to Espridigital
+description: Discover Espridigital, a powerful SaaS platform designed for organizing and managing all your project documentation efficiently.
+---
+
+## Overview
+
+Espridigital empowers you to centralize, organize, and collaborate on your project documentation effortlessly. As a SaaS platform, it provides dedicated spaces for teams to create, version, and share docs without the hassle of scattered files or complex tools. You benefit from intuitive organization, real-time collaboration, and powerful search features that keep your knowledge accessible.
+
+<Callout kind="info">
+Espridigital integrates seamlessly with your workflow, supporting Markdown, rich text, and API-driven content updates.
+</Callout>
+
+## Key Features
+
+Espridigital stands out with features tailored for documentation management. Explore the core capabilities that streamline your processes.
+
+<Columns cols={3}>
+  <Card title="Organized Spaces" icon="folder" href="#spaces">
+    Create unlimited documentation spaces for projects, teams, or clients. Each space supports nested folders and custom permissions.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#versioning">
+    Track changes with Git-like versioning. Roll back edits and maintain a complete history of your docs.
+  </Card>
+  <Card title="Collaboration Tools" icon="users" href="#collaboration">
+    Invite team members, assign roles, and enable real-time editing with comments and @mentions.
+  </Card>
+  <Card title="Advanced Search" icon="search" href="#search">
+    Find content instantly with full-text search, tags, and AI-powered summaries.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get up and running with Espridigital in minutes. Follow these steps to create your first documentation space.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit `https://dashboard.espridigital.com` and create your account using email or SSO.
+
+    <Callout kind="tip">
+      New users receive a free trial with unlimited spaces.
+    </Callout>
+  </Step>
+  <Step title="Create a Space" icon="plus">
+    Click "New Space" in the dashboard. Name it (e.g., "Project Alpha Docs") and set visibility.
+  </Step>
+  <Step title="Add Your First Doc" icon="file-text">
+    Upload Markdown files or start a new page. Use the editor to format content.
+
+````javascript
+// Example: Embed Espridigital docs in your app
+const embedDoc = (spaceId, docId) => {
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://docs.espridigital.com/embed/${spaceId}/${docId}`;
+  iframe.width = '100%';
+  iframe.height = '600';
+  document.body.appendChild(iframe);
+};
+````
+
+  </Step>
+  <Step title="Share and Collaborate" icon="share-2">
+    Generate share links or invite collaborators via email.
+  </Step>
+</Steps>
+
+## Brand Guidelines
+
+Follow these guidelines to maintain consistency when customizing Espridigital themes or embeds.
+
+<Expandable title="Color Scheme" default-open="true">
+  Use the primary brand color `#3B82F6` for accents and buttons.
+
+  ```css
+  :root {
+    --espridigital-primary: #3B82F6;
+    --espridigital-secondary: #1E40AF;
+    --espridigital-bg: #F8FAFC;
+  }
+  ```
+
+  Secondary colors include `#1E40AF` for depth and `#F8FAFC` for backgrounds.
+</Expandable>
+
+<Expandable title="Typography and Icons">
+  Pair with sans-serif fonts like Inter or system defaults. Use Lucide icons for UI elements matching Espridigital's style.
+</Expandable>
+
+## Next Steps
+
+Dive deeper into Espridigital with these resources.
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="zap" href="/quickstart">
+    Set up advanced features and integrations.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your spaces with API keys and OAuth.
+  </Card>
+  <Card title="API Reference" icon="code" href="/api">
+    Automate docs with our REST API at `https://api.espridigital.com`.
+  </Card>
+  <Card title="Help Center" icon="help-circle" href="/help-center">
+    FAQs, troubleshooting, and support.
+  </Card>
+</Columns>
+
+<Tabs>
+  <Tab title="For Teams" icon="users">
+    Scale collaboration with role-based access and webhooks.
+  </Tab>
+  <Tab title="For Developers" icon="code">
+    Integrate via API: Fetch docs with `GET /v1/spaces/{spaceId}/docs`.
+  </Tab>
+</Tabs>

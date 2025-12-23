@@ -1,0 +1,139 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and new features released in Espridigital.
+---
+
+## Recent Updates
+
+Stay informed about Espridigital's evolution. You receive new capabilities to better organize and manage your project documentation. Review the highlights below, grouped by release.
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Introduce real-time collaboration, allowing multiple users to edit documents simultaneously with live cursors and conflict resolution.
+- Add custom workflows for automated document approval processes.
+
+## Improvements
+
+- Enhance search performance by `{30%}` with indexed full-text search across all projects.
+- Update the UI dashboard for faster navigation and better mobile responsiveness.
+
+## Bug Fixes
+
+- Resolve intermittent sync issues when uploading large files `{>50MB}`.
+- Fix markdown rendering glitches in nested lists.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.2.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Optimize API response times, reducing latency to `<100ms` for most endpoints.
+- Introduce version history rollback with one-click restore to previous document states.
+
+## Bug Fixes
+
+- Correct authentication token refresh logic to prevent logout during long sessions.
+- Patch vulnerability in webhook handling (security improvement).
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Launch integrations with GitHub and Slack for seamless notifications and repo syncing.
+- Add template gallery with pre-built documentation starters for APIs, SDKs, and changelogs.
+
+## Breaking Changes
+
+- Update API namespace from `v1/docs` to `v2/projects` – migrate your calls accordingly.
+- Remove deprecated `legacy-auth` header in favor of JWT tokens.
+
+</Update>
+
+## Upgrading to the Latest Version
+
+Follow these steps to update Espridigital smoothly and avoid disruptions.
+
+<Steps>
+  <Step title="Backup Your Projects" icon="database">
+
+    Export all projects via the dashboard or API.
+
+    ```bash
+    curl -H "Authorization: Bearer YOUR_TOKEN" \
+         https://api.example.com/v2/projects/export \
+         -o backup.json
+    ```
+
+  </Step>
+  <Step title="Update Client SDK" icon="download">
+
+    <CodeGroup tabs="npm,yarn,pip">
+
+    ````bash
+    npm install espridigital@1.3.0
+    ````
+
+    ````bash
+    yarn add espridigital@1.3.0
+    ````
+
+    ````bash
+    pip install espridigital==1.3.0
+    ````
+
+    </CodeGroup>
+
+  </Step>
+  <Step title="Run Migrations" icon="settings">
+
+    Execute database migrations if self-hosting.
+
+    ```bash
+    docker exec espridigital migrate up
+    ```
+
+  </Step>
+  <Step title="Verify and Test" icon="check-circle">
+
+    Test key workflows like editing and sharing.
+
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+
+  Always test upgrades in a staging environment first. Check the [migration guide](/quickstart#upgrading) for v1.1.0 breaking changes.
+
+</Callout>
+
+## Upcoming Features
+
+Get a preview of what's next for Espridigital.
+
+<Columns cols={3}>
+  <Card title="AI Assistant" icon="bot" href="#ai-preview">
+    Smart suggestions for documentation structure and content generation.
+  </Card>
+  <Card title="Advanced Analytics" icon="bar-chart-3" href="#analytics">
+    Track document usage, popular sections, and contributor activity.
+  </Card>
+  <Card title="Multi-Language Support" icon="globe" href="#i18n">
+    Auto-translate docs and RTL language rendering.
+  </Card>
+</Columns>
+
+<Expandable title="Detailed Roadmap" default-open="false">
+
+  - Q4 2024: Beta AI features with OpenAI integration.
+  - Q1 2025: Enterprise SSO and audit logs.
+
+</Expandable>
+
+## Staying Updated
+
+Subscribe to notifications in your dashboard settings or follow us on GitHub for release alerts. You access full release notes directly in the app under `{Settings > Updates}`.
